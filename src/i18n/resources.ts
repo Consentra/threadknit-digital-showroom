@@ -20,7 +20,7 @@ const en = {
     ar: "العربية",
   },
   hero: {
-    label: "Premium Knitwear Manufacturer",
+    label: "Garment Buying & Liaison House",
     titleA: "Softness",
     titleB1: "You Can",
     titleB2: "Wear.",
@@ -30,10 +30,36 @@ const en = {
   catalog: {
     eyebrow: "Our Collections",
     title: "Premium Knitwear Catalog",
-    description: "Every piece is developed with a focus on quality, fit, and fabric performance — using materials ranging from 140 to 350 GSM.",
+    description: "Knit is our core strength — every piece is developed with focus on quality, fit and fabric performance, using materials from 140 to 350 GSM. Our wider network also supports woven, sweater, leather and lingerie sourcing.",
     ladies: "Ladies' Catalog",
     mens: "Men's Catalog",
     children: "Children's Catalog",
+  },
+  capabilities: {
+    eyebrow: "What We Do",
+    title1: "A Buying & Liaison House",
+    title2: "for Global Brands",
+    description: "From sourcing and product development to production oversight and on-time shipment — we bridge international buyers with trusted Bangladesh manufacturing. Knit is our core strength; our network spans woven, sweater, leather and lingerie.",
+    collage: {
+      sourcingEyebrow: "Sourcing & Development",
+      sourcingTitle: "Curated fabrics. Honest tech packs. Real samples.",
+      productionEyebrow: "Production Oversight",
+      productionTitle: "On the floor with every order.",
+    },
+    stats: {
+      gsm: "GSM Fabric Range",
+      countries: "Export Destinations",
+      categories: "Apparel Categories",
+      response: "Response Time",
+    },
+    pillars: {
+      sourcing: { title: "Strategic Sourcing", desc: "Trusted mill and factory partners across knit, woven, sweater, leather and lingerie." },
+      development: { title: "Product Development", desc: "From mood boards and tech packs to lab dips, fit samples and pre-production approvals." },
+      production: { title: "Production Liaison", desc: "On-site coordination, daily updates and proactive issue resolution at every stage." },
+      quality: { title: "Quality Assurance", desc: "Multi-point in-line and final inspections aligned with international buyer standards." },
+      logistics: { title: "Shipping & Logistics", desc: "Documentation, freight booking and on-time delivery to ports worldwide." },
+      value: { title: "Commercial Value", desc: "Transparent costing, flexible MOQs and pricing that respects both quality and margin." },
+    },
   },
   categories: {
     all: "All Collections",
@@ -44,7 +70,7 @@ const en = {
   productCard: { specs: "Technical Specs" },
   footer: {
     motto: "\"Softness You Can Wear. Crafted for Comfort. Styled for Life.\"",
-    tagline: "Crafting premium knitwear for international buyers since day one.",
+    tagline: "A Bangladesh-based garment buying & liaison house — knit specialists with sourcing capability across woven, sweater, leather and lingerie.",
     navigation: "Navigation",
     productCatalog: "Product Catalog",
     aboutUs: "About Us",
