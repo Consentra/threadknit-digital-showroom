@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://threadknit.lovable.app/sitemap.xml
