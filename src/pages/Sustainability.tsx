@@ -16,7 +16,7 @@ import {
 import SEO from "@/components/SEO";
 import sustainabilityHero from "@/assets/sustainability-hero.jpg";
 import sustainabilityMaterials from "@/assets/sustainability-materials.jpg";
-import sustainabilityWater from "@/assets/sustainability-water.jpg";
+import sustainabilityField from "@/assets/sustainability-field.jpg";
 
 const pillars = [
   {
@@ -358,8 +358,8 @@ const Sustainability = () => {
             className="relative rounded-sm overflow-hidden shadow-2xl shadow-primary/20"
           >
             <img
-              src={sustainabilityWater}
-              alt="Hands holding cotton bolls under flowing water"
+              src={sustainabilityField}
+              alt="Organic cotton field at golden hour"
               className="w-full h-full object-cover aspect-[4/3]"
               loading="lazy"
               width={1400}

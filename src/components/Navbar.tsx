@@ -43,14 +43,20 @@ const Navbar = () => {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isTransparent
-            ? "bg-gradient-to-b from-navy/90 via-navy/60 to-transparent backdrop-blur-sm md:from-navy/60 md:via-navy/30"
+            ? "bg-navy/85 md:bg-gradient-to-b md:from-navy/55 md:via-navy/25 md:to-transparent backdrop-blur-md md:backdrop-blur-sm"
             : "bg-background/95 backdrop-blur-md shadow-lg border-b border-border"
         }`}
       >
         <nav className="container mx-auto flex items-center justify-between px-6 py-4">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2" aria-label="ThreadKnit home">
-            <div className="relative flex items-center justify-center h-9 w-9 rounded-lg bg-gradient-to-br from-white/30 via-accent/10 to-white/20 backdrop-blur-xl ring-1 ring-white/30 shadow-[0_2px_16px_-3px_rgba(255,255,255,0.25),inset_0_1px_2px_rgba(255,255,255,0.3)]">
+          <Link to="/" className="flex items-center gap-2.5" aria-label="ThreadKnit home">
+            <div
+              className={`relative flex items-center justify-center h-9 w-9 rounded-md transition-colors ${
+                isTransparent
+                  ? "bg-cream ring-1 ring-accent/40"
+                  : "bg-primary ring-1 ring-accent/30"
+              }`}
+            >
               <img
                 src={logoSymbol}
                 alt="ThreadKnit emblem"
@@ -165,7 +171,7 @@ const Navbar = () => {
             transition={{ duration: 0.4, ease: "easeOut" }}
           >
             <div className="bg-primary px-6 pt-6 pb-4 flex items-center gap-4">
-              <div className="relative flex items-center justify-center h-11 w-11 rounded-lg bg-gradient-to-br from-white/30 via-accent/10 to-white/20 backdrop-blur-xl ring-1 ring-white/30 shadow-[inset_0_1px_2px_rgba(255,255,255,0.3)]">
+              <div className="relative flex items-center justify-center h-11 w-11 rounded-md bg-cream ring-1 ring-accent/40">
                 <img
                   src={logoSymbol}
                   alt="ThreadKnit emblem"

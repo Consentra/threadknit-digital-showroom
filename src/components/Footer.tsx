@@ -52,7 +52,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-4">
             <Link to="/" className="flex items-center gap-3 mb-5 group" aria-label="ThreadKnit home">
-              <div className="flex items-center justify-center h-12 w-12 rounded-xl bg-gradient-to-br from-white/30 via-accent/10 to-white/20 backdrop-blur-xl ring-1 ring-white/30 shadow-[0_2px_16px_-3px_rgba(255,255,255,0.15),inset_0_1px_2px_rgba(255,255,255,0.3)] transition-transform group-hover:scale-105">
+              <div className="flex items-center justify-center h-12 w-12 rounded-md bg-cream ring-1 ring-accent/40 transition-transform group-hover:scale-105">
                 <img src={logoSymbol} alt="ThreadKnit emblem" className="h-9 w-9 object-contain" />
               </div>
               <h3 className="font-serif text-2xl font-bold">
