@@ -91,7 +91,7 @@ const Contact = () => {
               aria-label="Abir Hossain on LinkedIn"
             >
               <Linkedin className="w-4 h-4" />
-              {t("contact.linkedin", "Connect on LinkedIn")}
+              {t("contact.linkedin",)}
             </a>
           </motion.div>
 
