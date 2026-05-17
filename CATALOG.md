@@ -36,36 +36,60 @@ public_html/
 ```json
 {
   "id": "M008",
-  "name": "New Polo Shirt",
+  "name": "Classic Polo Shirt",
   "category": "mens",
-  "subcategory": "Polo Shirts",
+  "fabrications": ["Knit"],
   "fabric": "100% Cotton Pique",
   "gsm": "220 GSM",
   "color": "Navy / White",
   "printEffect": "Embroidery",
   "image": "/uploads/my-new-photo.jpg",
-  "description": "Short description of the product shown below the title on the card.",
-  "tags": ["Pique", "Classic"],
-  "fabrications": ["Knit"]
+  "subcategory": "Polo Shirts",
+  "description": "Optional short description.",
+  "tags": ["Pique", "Classic"]
 }
 ```
 
-| Field | Required | Notes |
-|-------|----------|-------|
-| `id` | Yes | Must be unique |
-| `name` | Yes | Product title |
-| `category` | Yes | `"ladies"`, `"mens"`, or `"children"` (gender category) |
-| `subcategory` | Yes | Shown as badge on card |
-| `fabric` | Yes | Fabric composition |
-| `gsm` | Yes | Fabric weight |
-| `color` | Yes | Colorway |
-| `printEffect` | Yes | Print/finish technique |
-| `image` | Yes | Must start with `/uploads/` |
-| `description` | No | Short text shown below the title (1-2 sentences) |
-| `tags` | No | Array of keyword strings shown as small badges |
-| `fabrications` | No | Array of product-type tags used by the filter: `"Knit"`, `"Woven"`, `"Leather"`, `"Sweater"`, `"Lingerie"`. Defaults to `["Knit"]` if omitted. |
+### Field reference (drives the catalog card)
 
-**Rules**
+| Field | Required | Drives | Notes |
+|-------|----------|--------|-------|
+| `id` | Yes | internal | Must be unique. |
+| `name` | Yes | **Product Name** under image | Shown as the card title. |
+| `category` | Yes | **Wear Category** under image | One of `"ladies"` (Women's Wear), `"mens"` (Men's Wear), `"children"` (Kid's Wear). |
+| `fabrications` | Recommended | **Product Type** badge on image + filter | Array. First item is shown on the card. Allowed: `"Knit"`, `"Woven"`, `"Leather"`, `"Sweater"`, `"Lingerie"`. Defaults to `["Knit"]` if omitted. |
+| `fabric` | Yes | Technical Specs → Fabrication | e.g. `"100% Cotton Pique"`. |
+| `gsm` | Optional | Appended to Fabrication | e.g. `"220 GSM"`. |
+| `color` | Optional | Technical Specs → Color | Set to `"none"` to hide the Color row. |
+| `printEffect` | Optional | Technical Specs → Print | Set to `"none"` to hide the Print row. |
+| `image` | Yes | card image | Must start with `/uploads/` and match a file you uploaded. |
+| `subcategory` | Optional | search index only | No longer shown on the card. |
+| `description` | Optional | search index only | No longer shown on the card. |
+| `tags` | Optional | search index only | No longer shown on the card. |
+
+### How the card behaves
+
+- Image shows the product photo with a small product-type badge (Knit /
+  Woven / Leather / Sweater / Lingerie).
+- Clicking the image — or the eye icon — opens a **Technical Specs**
+  overlay showing Fabrication, Color and Print. The eye icon toggles it
+  closed.
+- If `color` or `printEffect` is `"none"` (case-insensitive) or empty,
+  that row is hidden automatically.
+- Below the image only the **Product Name** and **Wear Category** are
+  shown — kept intentionally minimal.
+
+### Hiding the Color or Print row
+
+```json
+{
+  "color": "none",
+  "printEffect": "none"
+}
+```
+
+## Rules
+
 - `id` must be unique.
 - `image` must start with `/uploads/` and match a file you uploaded.
 - Keep the JSON valid — every item separated by a comma, no trailing comma
@@ -73,8 +97,8 @@ public_html/
 
 ## Pagination
 
-The homepage shows 12 products at a time and adds a **Load More** button
-when there are more. You can safely add hundreds of items to `catalog.json`.
+The catalog page shows 12 products at a time and adds a **Load More**
+button when there are more. You can safely add hundreds of items.
 
 ## Safety
 

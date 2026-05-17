@@ -1,6 +1,7 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Eye, Layers } from "lucide-react";
+import { Eye, EyeOff } from "lucide-react";
 import { type Product } from "@/data/products";
 
 interface ProductCardProps {
@@ -8,133 +9,155 @@ interface ProductCardProps {
   index: number;
 }
 
+const NONE_VALUES = new Set(["none", "n/a", "na", "-", ""]);
+const isNone = (v?: string) =>
+  !v || NONE_VALUES.has(v.trim().toLowerCase());
+
 const ProductCard = ({ product, index }: ProductCardProps) => {
   const { t } = useTranslation();
+  const [showSpecs, setShowSpecs] = useState(false);
+
+  const productType =
+    (product.fabrications && product.fabrications[0]) || "Knit";
+
+  const specs: { label: string; value: string }[] = [];
+  if (!isNone(product.fabric)) {
+    const fab = product.gsm
+      ? `${product.fabric} · ${product.gsm}`
+      : product.fabric;
+    specs.push({ label: t("productCard.fabrication"), value: fab });
+  }
+  if (!isNone(product.color))
+    specs.push({ label: t("productCard.color"), value: product.color });
+  if (!isNone(product.printEffect))
+    specs.push({ label: t("productCard.print"), value: product.printEffect });
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50, scale: 0.95 }}
+      initial={{ opacity: 0, y: 40, scale: 0.96 }}
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       viewport={{ once: true, margin: "-80px" }}
-      transition={{ delay: index * 0.06, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-      whileHover={{ y: -8 }}
+      transition={{
+        delay: index * 0.05,
+        duration: 0.7,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+      whileHover={{ y: -6 }}
       className="group relative bg-card rounded-sm overflow-hidden border border-border hover:border-accent/50 transition-all duration-500 hover:shadow-2xl hover:shadow-accent/10"
     >
       {/* Image */}
-      <div className="relative aspect-[3/4] overflow-hidden bg-secondary">
+      <button
+        type="button"
+        onClick={() => setShowSpecs((s) => !s)}
+        className="relative block w-full aspect-[3/4] overflow-hidden bg-secondary text-left focus:outline-none focus:ring-2 focus:ring-accent/50"
+        aria-label={showSpecs ? t("productCard.hideSpecs") : t("productCard.viewSpecs")}
+        aria-expanded={showSpecs}
+      >
         <motion.img
           src={product.image}
           alt={product.name}
           className="w-full h-full object-cover"
           loading="lazy"
-          whileHover={{ scale: 1.08 }}
+          animate={{ scale: showSpecs ? 1.05 : 1 }}
+          whileHover={{ scale: showSpecs ? 1.08 : 1.06 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         />
 
-        {/* Gradient overlay on hover */}
-        <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/60 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500" />
-
-        {/* Specs badge - slides up on hover */}
-        <div className="absolute bottom-0 left-0 right-0 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out p-5">
-          <div className="flex items-center gap-2 mb-3">
-            <Layers className="w-3.5 h-3.5 text-accent" />
-            <p className="font-sans text-[10px] uppercase tracking-[0.2em] text-accent font-semibold">
-              {t("productCard.specs")}
-            </p>
-          </div>
-          <div className="space-y-1.5">
-            <p className="font-sans text-xs text-cream/90">{product.fabric}</p>
-            <p className="font-sans text-sm font-bold text-accent">{product.gsm}</p>
-            <div className="flex items-center gap-2 mt-2">
-              <span className="px-2 py-0.5 bg-cream/10 rounded-sm font-sans text-[10px] text-cream/80 uppercase tracking-wider">
-                {product.printEffect}
-              </span>
-              <span className="px-2 py-0.5 bg-cream/10 rounded-sm font-sans text-[10px] text-cream/80 uppercase tracking-wider">
-                {product.color}
-              </span>
-            </div>
-          </div>
-        </div>
-
-        {/* View icon - top right */}
-        <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 delay-100">
-          <div className="w-9 h-9 rounded-full bg-accent/90 flex items-center justify-center backdrop-blur-sm">
-            <Eye className="w-4 h-4 text-accent-foreground" />
-          </div>
-        </div>
-
-        {/* Subcategory badge */}
-        <div className="absolute top-4 left-4">
-          <span className="px-3 py-1 bg-background/80 backdrop-blur-sm font-sans text-[10px] uppercase tracking-[0.15em] text-foreground/80 rounded-sm border border-border/50">
-            {product.subcategory}
+        {/* Product-type badge (top-left) */}
+        <div className="absolute top-3 left-3 z-10">
+          <span className="px-2.5 py-1 bg-background/85 backdrop-blur-sm font-sans text-[10px] uppercase tracking-[0.18em] text-foreground rounded-sm border border-border/60">
+            {productType}
           </span>
         </div>
-      </div>
 
-      {/* Info */}
-      <div className="p-5 space-y-3">
-        {/* Product Name */}
-        <div>
-          <p className="font-sans text-[9px] uppercase tracking-[0.25em] text-muted-foreground/70 font-semibold mb-1">
-            Product Name
-          </p>
-          <h3 className="font-serif text-base font-semibold text-foreground leading-snug group-hover:text-accent transition-colors duration-300">
-            {product.name}
-          </h3>
-        </div>
-
-        {/* Fabrication */}
-        <div>
-          <p className="font-sans text-[9px] uppercase tracking-[0.25em] text-muted-foreground/70 font-semibold mb-1">
-            Fabrication
-          </p>
-          <p className="font-sans text-xs text-foreground/85 leading-relaxed">
-            {product.fabric}, {product.gsm}
-          </p>
-        </div>
-
-        {/* Category */}
-        <div>
-          <p className="font-sans text-[9px] uppercase tracking-[0.25em] text-muted-foreground/70 font-semibold mb-1.5">
-            Category
-          </p>
-          <div className="flex flex-wrap gap-1.5">
-            {(product.fabrications && product.fabrications.length > 0
-              ? product.fabrications
-              : ["Knit"]
-            ).map((f) => (
-              <span
-                key={`fab-${f}`}
-                className="px-2 py-0.5 bg-accent/10 text-accent font-sans text-[10px] uppercase tracking-wider rounded-sm border border-accent/20"
-              >
-                {f}
-              </span>
-            ))}
-            <span className="px-2 py-0.5 bg-secondary text-foreground/70 font-sans text-[10px] uppercase tracking-wider rounded-sm border border-border">
-              {t(`categories.${product.category}`)}
-            </span>
+        {/* Eye toggle (top-right) */}
+        <motion.div
+          className="absolute top-3 right-3 z-10"
+          initial={false}
+          animate={{ opacity: showSpecs ? 1 : 0.85 }}
+        >
+          <div
+            role="presentation"
+            className={`w-9 h-9 rounded-full flex items-center justify-center backdrop-blur-sm transition-colors duration-300 ${
+              showSpecs
+                ? "bg-accent text-accent-foreground"
+                : "bg-background/80 text-foreground/80 group-hover:bg-accent/90 group-hover:text-accent-foreground"
+            }`}
+          >
+            <AnimatePresence mode="wait" initial={false}>
+              {showSpecs ? (
+                <motion.span
+                  key="off"
+                  initial={{ rotate: -90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: 90, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="inline-flex"
+                >
+                  <EyeOff className="w-4 h-4" />
+                </motion.span>
+              ) : (
+                <motion.span
+                  key="on"
+                  initial={{ rotate: -90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: 90, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="inline-flex"
+                >
+                  <Eye className="w-4 h-4" />
+                </motion.span>
+              )}
+            </AnimatePresence>
           </div>
-        </div>
+        </motion.div>
 
-        {/* Description preview */}
-        {product.description && (
-          <p className="font-sans text-xs text-muted-foreground line-clamp-2 leading-relaxed pt-1 border-t border-border/50">
-            {product.description}
-          </p>
-        )}
-
-        {/* Tags */}
-        {product.tags && product.tags.length > 0 && (
-          <div className="flex flex-wrap gap-1.5">
-            {product.tags.map((tag) => (
-              <span
-                key={tag}
-                className="px-2 py-0.5 bg-muted text-muted-foreground font-sans text-[9px] uppercase tracking-wider rounded-sm"
+        {/* Technical Specs overlay */}
+        <AnimatePresence>
+          {showSpecs && (
+            <motion.div
+              key="specs"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.35 }}
+              className="absolute inset-0 bg-gradient-to-t from-navy via-navy/85 to-navy/55 flex flex-col justify-end p-5"
+            >
+              <motion.div
+                initial={{ y: 24, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: 16, opacity: 0 }}
+                transition={{ delay: 0.05, duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
               >
-                {tag}
-              </span>
-            ))}
-          </div>
-        )}
+                <p className="font-sans text-[10px] uppercase tracking-[0.25em] text-accent font-semibold mb-3">
+                  {t("productCard.specs")}
+                </p>
+                <div className="space-y-2.5">
+                  {specs.map((s) => (
+                    <div key={s.label}>
+                      <p className="font-sans text-[9px] uppercase tracking-[0.2em] text-cream/60">
+                        {s.label}
+                      </p>
+                      <p className="font-sans text-xs text-cream/95 leading-snug">
+                        {s.value}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </button>
+
+      {/* Minimal info */}
+      <div className="p-5 space-y-2">
+        <h3 className="font-serif text-base font-semibold text-foreground leading-snug group-hover:text-accent transition-colors duration-300">
+          {product.name}
+        </h3>
+        <p className="font-sans text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+          {t(`categories.${product.category}`)}
+        </p>
       </div>
     </motion.div>
   );

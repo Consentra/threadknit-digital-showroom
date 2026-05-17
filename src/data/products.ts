@@ -48,9 +48,9 @@ export const products: Product[] = [
 
 export const categories = [
   { id: "all", label: "All Collections" },
-  { id: "ladies", label: "Ladies' Knitwear" },
-  { id: "mens", label: "Men's Collection" },
-  { id: "children", label: "Children's Products" },
+  { id: "ladies", label: "Women's Wear" },
+  { id: "mens", label: "Men's Wear" },
+  { id: "children", label: "Kid's Wear" },
 ] as const;
 
 export const fabricationTypes: { id: "all" | FabricationType; label: string }[] = [
