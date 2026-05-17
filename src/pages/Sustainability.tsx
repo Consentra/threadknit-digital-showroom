@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import SEO from "@/components/SEO";
 import sustainabilityHero from "@/assets/sustainability-hero.jpg";
+import { useTranslation } from "react-i18next";
 import sustainabilityMaterials from "@/assets/sustainability-materials.jpg";
 import sustainabilityField from "@/assets/sustainability-field.jpg";
 
