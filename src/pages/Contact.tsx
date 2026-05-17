@@ -91,8 +91,7 @@ const Contact = () => {
               aria-label="Abir Hossain on LinkedIn"
             >
               <Linkedin className="w-4 h-4" />
-              {t("contact.linkedin",)}
-            </a>
+                         </a>
           </motion.div>
 
           {/* Contact Cards Grid */}
