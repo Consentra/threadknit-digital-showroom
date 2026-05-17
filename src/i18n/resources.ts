@@ -5,6 +5,7 @@ const en = {
     home: "Home",
     about: "About Us",
     contact: "Contact",
+    sustainability : "Sustainability",
     catalog: "Catalog",
     query: "Query",
     queryFormTitle: "Send Us a Query",
