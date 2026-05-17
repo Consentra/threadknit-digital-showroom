@@ -146,13 +146,8 @@ const Catalog = () => {
               value={searchQuery}
               onChange={setSearchQuery}
               resultCount={filtered.length}
-            />
-          )}
-
-          {!loading && !error && products.length > 0 && (
-            <FabricationFilter
-              active={activeFabrication}
-              onChange={setActiveFabrication}
+              activeFabrication={activeFabrication}
+              onFabricationChange={setActiveFabrication}
             />
           )}
 
@@ -164,14 +159,9 @@ const Catalog = () => {
                   className="rounded-sm overflow-hidden border border-border bg-card"
                 >
                   <Skeleton className="aspect-[3/4] w-full" />
-                  <div className="p-5 space-y-3">
+                  <div className="p-5 space-y-2">
                     <Skeleton className="h-4 w-3/4" />
-                    <Skeleton className="h-3 w-full" />
-                    <Skeleton className="h-3 w-1/2" />
-                    <div className="flex gap-2 pt-1">
-                      <Skeleton className="h-5 w-16 rounded-sm" />
-                      <Skeleton className="h-5 w-12 rounded-sm" />
-                    </div>
+                    <Skeleton className="h-3 w-1/3" />
                   </div>
                 </div>
               ))}
@@ -181,7 +171,7 @@ const Catalog = () => {
           {!loading && error && (
             <div className="text-center py-16">
               <p className="font-sans text-sm text-muted-foreground">
-                Unable to load the catalog right now. Please refresh the page.
+                {t("catalog.loadError")}
               </p>
             </div>
           )}
@@ -190,8 +180,8 @@ const Catalog = () => {
             <div className="text-center py-16">
               <p className="font-sans text-sm text-muted-foreground">
                 {searchQuery
-                  ? `No products matching "${searchQuery}". Try a different search term.`
-                  : "No products available in this collection yet."}
+                  ? t("catalog.noMatch", { query: searchQuery })
+                  : t("catalog.noResults")}
               </p>
             </div>
           )}
@@ -219,11 +209,12 @@ const Catalog = () => {
                     onClick={() => setVisibleCount((c) => c + PAGE_SIZE)}
                     className="inline-flex items-center gap-2 px-8 py-3 border border-accent/40 text-accent font-sans text-[11px] font-semibold uppercase tracking-[0.2em] rounded-sm hover:bg-accent hover:text-accent-foreground transition-all duration-300"
                   >
-                    Load More
+                    {t("catalog.loadMore")}
                   </button>
                   <p className="font-sans text-[11px] text-muted-foreground">
-                    Showing {visible.length} of {filtered.length} products
-                    {remaining > 0 && ` · ${remaining} more`}
+                    {t("catalog.showing")} {visible.length} {t("catalog.of")}{" "}
+                    {filtered.length}
+                    {remaining > 0 && ` · ${remaining} ${t("catalog.more")}`}
                   </p>
                 </div>
               )}
