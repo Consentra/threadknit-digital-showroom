@@ -97,6 +97,7 @@ const en = {
     navigation: "Navigation",
     productCatalog: "Product Catalog",
     aboutUs: "About Us",
+    sustainability: "Sustainability",
     contact: "Contact",
     resources: "Resources",
     brochure: "Brochure",
