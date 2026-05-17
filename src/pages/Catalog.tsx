@@ -3,7 +3,6 @@ import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "framer-motion";
 import { Download } from "lucide-react";
 import CategoryFilter from "@/components/CategoryFilter";
-import FabricationFilter from "@/components/FabricationFilter";
 import ProductCard from "@/components/ProductCard";
 import CatalogSearch from "@/components/CatalogSearch";
 import SEO from "@/components/SEO";
