@@ -13,65 +13,44 @@ import {
   RotateCcw,
   Package,
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import SEO from "@/components/SEO";
 import sustainabilityHero from "@/assets/sustainability-hero.jpg";
-import { useTranslation } from "react-i18next";
 import sustainabilityMaterials from "@/assets/sustainability-materials.jpg";
 import sustainabilityField from "@/assets/sustainability-field.jpg";
 
-const pillars = [
-  {
-    icon: Factory,
-    title: "Sustainable Manufacturing",
-    desc: "Modern, energy-conscious facilities with optimized workflows that reduce waste, water and power consumption across the production cycle.",
-  },
-  {
-    icon: HeartHandshake,
-    title: "Ethical Sourcing",
-    desc: "Long-term partnerships with mills and suppliers that respect fair labor practices, safe working conditions and transparent traceability.",
-  },
-  {
-    icon: Sprout,
-    title: "Eco-Friendly Materials",
-    desc: "A growing range of organic cotton, recycled blends and low-impact fibers — chosen for durability and a smaller environmental footprint.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Quality & Compliance",
-    desc: "Multi-stage quality inspections aligned with internationally recognized standards, from raw fabric to final packaging.",
-  },
-  {
-    icon: Droplets,
-    title: "Environmental Responsibility",
-    desc: "Water-efficient dyeing, responsible chemical management and continuous investment in cleaner processes to minimize our footprint.",
-  },
-  {
-    icon: Award,
-    title: "Ongoing Commitments",
-    desc: "We benchmark ourselves against industry-recognized frameworks and work toward higher standards every season — step by step, honestly.",
-  },
-];
+const PILLARS = [
+  { key: "manufacturing", icon: Factory },
+  { key: "sourcing", icon: HeartHandshake },
+  { key: "materials", icon: Sprout },
+  { key: "quality", icon: ShieldCheck },
+  { key: "environment", icon: Droplets },
+  { key: "commitments", icon: Award },
+] as const;
 
-const principles = [
-  { stat: "100%", label: "Buyer-aligned", desc: "Sustainability decisions made together with our partners." },
-  { stat: "Multi-stage", label: "Quality Oversight", desc: "From yarn inspection to final packaging." },
-  { stat: "Lower-impact", label: "Material Choices", desc: "Organic, recycled and responsibly sourced fibers." },
-  { stat: "Continuous", label: "Improvement", desc: "Every season, measurable steps forward." },
-];
+const PRINCIPLE_KEYS = ["p1", "p2", "p3", "p4"] as const;
 
-const circularSteps = [
-  { icon: Sprout, title: "Responsible Sourcing", desc: "Organic and certified fibers chosen at the field level." },
-  { icon: Factory, title: "Cleaner Production", desc: "Energy-efficient knitting and low-impact dyeing." },
-  { icon: Package, title: "Mindful Packaging", desc: "Recyclable and right-sized packaging to reduce waste." },
-  { icon: RotateCcw, title: "Recycle & Reuse", desc: "Off-cuts and yarn waste reintroduced into the supply chain." },
-];
+const CIRCULAR = [
+  { key: "s1", icon: Sprout },
+  { key: "s2", icon: Factory },
+  { key: "s3", icon: Package },
+  { key: "s4", icon: RotateCcw },
+] as const;
+
+const WATER_CARDS = [
+  { key: "c1", icon: Droplets },
+  { key: "c2", icon: Sun },
+  { key: "c3", icon: Wind },
+] as const;
 
 const Sustainability = () => {
+  const { t } = useTranslation();
+
   return (
     <main className="bg-background">
       <SEO
-        title="Sustainability | ThreadKnit"
-        description="ThreadKnit's commitment to sustainable manufacturing, ethical sourcing, eco-friendly materials and responsible knitwear production."
+        title={t("sustainability.seoTitle")}
+        description={t("sustainability.seoDesc")}
         path="/sustainability"
       />
 
@@ -99,17 +78,17 @@ const Sustainability = () => {
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-accent/40 bg-primary/30 backdrop-blur-sm mb-6">
               <Leaf className="w-3.5 h-3.5 text-accent" />
               <span className="font-sans text-[11px] uppercase tracking-[0.25em] text-accent font-semibold">
-                Sustainability
+                {t("sustainability.hero.badge")}
               </span>
             </div>
             <h1 className="font-serif text-4xl md:text-6xl font-bold leading-tight mb-6">
-              Knitwear, made with{" "}
-              <span className="text-accent italic">conscience.</span>
+              {t("sustainability.hero.titleA")}{" "}
+              <span className="text-accent italic">
+                {t("sustainability.hero.titleHighlight")}
+              </span>
             </h1>
             <p className="font-sans text-base md:text-lg text-primary-foreground/85 leading-relaxed">
-              At ThreadKnit, sustainability isn't a marketing line — it's a working
-              commitment. From the fibers we choose to the partners we work with, we
-              build garments that respect people, place and process.
+              {t("sustainability.hero.subtitle")}
             </p>
           </motion.div>
         </div>
@@ -127,23 +106,22 @@ const Sustainability = () => {
             <div className="flex items-center justify-center gap-3 mb-4">
               <div className="w-8 h-px bg-accent" />
               <p className="font-sans text-[11px] uppercase tracking-[0.3em] text-accent font-semibold">
-                Our Pillars
+                {t("sustainability.pillarsSection.eyebrow")}
               </p>
               <div className="w-8 h-px bg-accent" />
             </div>
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground">
-              How We Practice Sustainability
+              {t("sustainability.pillarsSection.title")}
             </h2>
             <p className="font-sans text-sm text-muted-foreground mt-4 max-w-2xl mx-auto">
-              Six interconnected commitments that guide how we design, source and
-              manufacture every order — without compromising on quality.
+              {t("sustainability.pillarsSection.subtitle")}
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {pillars.map((p, i) => (
+            {PILLARS.map((p, i) => (
               <motion.div
-                key={p.title}
+                key={p.key}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
@@ -154,10 +132,10 @@ const Sustainability = () => {
                   <p.icon className="w-5 h-5" />
                 </div>
                 <h3 className="font-serif text-lg font-semibold text-foreground mb-2 group-hover:text-accent transition-colors">
-                  {p.title}
+                  {t(`sustainability.pillarsSection.items.${p.key}.title`)}
                 </h3>
                 <p className="font-sans text-sm text-muted-foreground leading-relaxed">
-                  {p.desc}
+                  {t(`sustainability.pillarsSection.items.${p.key}.desc`)}
                 </p>
               </motion.div>
             ))}
@@ -169,9 +147,9 @@ const Sustainability = () => {
       <section className="py-16 bg-secondary/40">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {principles.map((p, i) => (
+            {PRINCIPLE_KEYS.map((k, i) => (
               <motion.div
-                key={p.label}
+                key={k}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -179,13 +157,13 @@ const Sustainability = () => {
                 className="text-center"
               >
                 <p className="font-serif text-3xl md:text-4xl font-bold text-accent">
-                  {p.stat}
+                  {t(`sustainability.principles.${k}.stat`)}
                 </p>
                 <p className="font-sans text-xs uppercase tracking-[0.2em] text-foreground font-semibold mt-2">
-                  {p.label}
+                  {t(`sustainability.principles.${k}.label`)}
                 </p>
                 <p className="font-sans text-xs text-muted-foreground mt-2 leading-relaxed">
-                  {p.desc}
+                  {t(`sustainability.principles.${k}.desc`)}
                 </p>
               </motion.div>
             ))}
@@ -222,27 +200,20 @@ const Sustainability = () => {
             <div className="flex items-center gap-2 mb-3">
               <Recycle className="w-4 h-4 text-accent" />
               <span className="font-sans text-[11px] uppercase tracking-[0.25em] text-accent font-semibold">
-                Materials
+                {t("sustainability.materials.eyebrow")}
               </span>
             </div>
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-5">
-              Better fibers, better garments.
+              {t("sustainability.materials.title")}
             </h2>
             <p className="font-sans text-sm text-muted-foreground leading-relaxed mb-4">
-              We actively expand our use of organic cotton, recycled polyester
-              blends and low-impact dyestuffs. Each material is selected not just
-              for its hand-feel and durability, but for the footprint behind it.
+              {t("sustainability.materials.body")}
             </p>
             <ul className="space-y-3 font-sans text-sm text-foreground/80">
-              {[
-                "Organic and ring-spun cotton options",
-                "Recycled polyester blends for fleece and terry",
-                "Low-impact and water-efficient dye processes",
-                "Responsible chemical management on the production floor",
-              ].map((item) => (
-                <li key={item} className="flex items-start gap-3">
+              {(["i1", "i2", "i3", "i4"] as const).map((k) => (
+                <li key={k} className="flex items-start gap-3">
                   <span className="mt-2 w-1.5 h-1.5 bg-accent rounded-full shrink-0" />
-                  {item}
+                  {t(`sustainability.materials.${k}`)}
                 </li>
               ))}
             </ul>
@@ -262,26 +233,24 @@ const Sustainability = () => {
             <div className="flex items-center justify-center gap-3 mb-4">
               <div className="w-8 h-px bg-accent" />
               <p className="font-sans text-[11px] uppercase tracking-[0.3em] text-accent font-semibold">
-                Circular Approach
+                {t("sustainability.circular.eyebrow")}
               </p>
               <div className="w-8 h-px bg-accent" />
             </div>
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground">
-              A More Circular Production Cycle
+              {t("sustainability.circular.title")}
             </h2>
             <p className="font-sans text-sm text-muted-foreground mt-4 max-w-2xl mx-auto">
-              We're working to close loops at every step — from how we source fibers
-              to what happens to off-cuts and packaging at the end of production.
+              {t("sustainability.circular.subtitle")}
             </p>
           </motion.div>
 
           <div className="relative">
-            {/* connecting line */}
             <div className="hidden lg:block absolute top-12 left-[10%] right-[10%] h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent" />
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-              {circularSteps.map((s, i) => (
+              {CIRCULAR.map((s, i) => (
                 <motion.div
-                  key={s.title}
+                  key={s.key}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -298,10 +267,10 @@ const Sustainability = () => {
                     </span>
                   </div>
                   <h3 className="font-serif text-base font-semibold text-foreground mb-2">
-                    {s.title}
+                    {t(`sustainability.circular.${s.key}.title`)}
                   </h3>
                   <p className="font-sans text-xs text-muted-foreground leading-relaxed max-w-[220px] mx-auto">
-                    {s.desc}
+                    {t(`sustainability.circular.${s.key}.desc`)}
                   </p>
                 </motion.div>
               ))}
@@ -321,31 +290,24 @@ const Sustainability = () => {
             <div className="flex items-center gap-2 mb-3">
               <Droplets className="w-4 h-4 text-accent" />
               <span className="font-sans text-[11px] uppercase tracking-[0.25em] text-accent font-semibold">
-                Resource Stewardship
+                {t("sustainability.water.eyebrow")}
               </span>
             </div>
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-5">
-              Every drop, every watt — accounted for.
+              {t("sustainability.water.title")}
             </h2>
             <p className="font-sans text-sm text-muted-foreground leading-relaxed mb-6">
-              Dyeing and finishing are some of the most resource-intensive stages
-              in garment production. We work with partners that invest in
-              water-recycling systems, controlled chemical dosing and energy-aware
-              machinery — measuring and reducing impact season after season.
+              {t("sustainability.water.body")}
             </p>
             <div className="grid grid-cols-3 gap-4">
-              {[
-                { icon: Droplets, label: "Water-efficient dyeing" },
-                { icon: Sun, label: "Energy-aware operations" },
-                { icon: Wind, label: "Cleaner air & effluent" },
-              ].map((it) => (
+              {WATER_CARDS.map((it) => (
                 <div
-                  key={it.label}
+                  key={it.key}
                   className="p-4 border border-border rounded-sm bg-card text-center hover:border-accent/40 transition-colors"
                 >
                   <it.icon className="w-5 h-5 text-accent mx-auto mb-2" />
                   <p className="font-sans text-[11px] text-foreground/80 leading-tight">
-                    {it.label}
+                    {t(`sustainability.water.${it.key}`)}
                   </p>
                 </div>
               ))}
@@ -386,20 +348,17 @@ const Sustainability = () => {
               <div className="flex items-center gap-2 mb-3">
                 <ShieldCheck className="w-4 h-4 text-accent" />
                 <span className="font-sans text-[11px] uppercase tracking-[0.25em] text-accent font-semibold">
-                  Our Commitment
+                  {t("sustainability.closer.eyebrow")}
                 </span>
               </div>
               <h3 className="font-serif text-2xl md:text-3xl font-bold mb-4">
-                Honest progress, every season.
+                {t("sustainability.closer.title")}
               </h3>
               <p className="font-sans text-sm md:text-base text-primary-foreground/80 leading-relaxed mb-6 max-w-2xl">
-                We don't claim certifications we haven't earned. Instead, we measure
-                what we do, share it openly with our buyers, and improve year over
-                year — guided by industry-recognized frameworks for quality, safety
-                and responsible manufacturing.
+                {t("sustainability.closer.body")}
               </p>
               <p className="font-serif italic text-primary-foreground/85 text-base">
-                "Softness you can wear. Crafted for comfort. Made with care."
+                {t("sustainability.closer.quote")}
               </p>
             </div>
           </motion.div>

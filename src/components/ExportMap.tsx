@@ -188,7 +188,7 @@ const ExportMap = () => {
                 >
                   <p className="font-serif text-sm font-semibold">{hovered.name}</p>
                   <p className="font-sans text-[10px] uppercase tracking-wider text-accent mt-0.5">
-                    {hovered.region}
+                    {t(`exportMap.regions.${hovered.region}`, hovered.region)}
                   </p>
                 </motion.div>
               )}
@@ -200,7 +200,7 @@ const ExportMap = () => {
             <div className="flex items-center gap-2">
               <Globe2 className="w-4 h-4 text-accent" />
               <span className="font-sans text-xs uppercase tracking-wider text-muted-foreground">
-                {EXPORT_COUNTRIES.length}+ {t("exportMap.countries", "countries")}
+                {EXPORT_COUNTRIES.length}+ {t("exportMap.countries")}
               </span>
             </div>
             {regions.map((r) => (
@@ -210,7 +210,9 @@ const ExportMap = () => {
                 className="flex items-center gap-2"
               >
                 <span className="w-2 h-2 rounded-full bg-accent" />
-                <span className="font-sans text-xs text-foreground/80">{r}</span>
+                <span className="font-sans text-xs text-foreground/80">
+                  {t(`exportMap.regions.${r}`, r)}
+                </span>
               </motion.div>
             ))}
           </div>
