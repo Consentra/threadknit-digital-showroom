@@ -1,5 +1,58 @@
 import { useEffect, useState } from "react";
-import type { Product } from "@/data/products";
+import type { Product, FabricationType } from "@/data/products";
+
+const VALID_TYPES: FabricationType[] = [
+  "Knit",
+  "Woven",
+  "Leather",
+  "Sweater",
+  "Lingerie",
+];
+
+/**
+ * Normalize a raw product entry from catalog.json into the shape the UI
+ * expects. Accepts both the clean schema (`type`, `print`) and the legacy
+ * schema (`fabrications`, `printEffect`, `gsm`).
+ */
+function normalize(raw: any): Product | null {
+  if (!raw || !raw.id || !raw.name || !raw.image) return null;
+
+  // Product type / fabrications
+  let fabrications: FabricationType[] = [];
+  if (Array.isArray(raw.fabrications)) {
+    fabrications = raw.fabrications.filter((f: any) =>
+      VALID_TYPES.includes(f as FabricationType)
+    );
+  } else if (typeof raw.type === "string") {
+    if (VALID_TYPES.includes(raw.type as FabricationType)) {
+      fabrications = [raw.type as FabricationType];
+    }
+  }
+  if (fabrications.length === 0) fabrications = ["Knit"];
+
+  // Fabric (optionally merge legacy gsm)
+  let fabric: string = raw.fabric ?? "";
+  if (raw.gsm && !fabric.includes(raw.gsm)) {
+    fabric = fabric ? `${fabric} · ${raw.gsm}` : raw.gsm;
+  }
+
+  const print: string = raw.print ?? raw.printEffect ?? "";
+
+  return {
+    id: String(raw.id),
+    name: String(raw.name),
+    image: String(raw.image),
+    category: raw.category ?? "ladies",
+    fabric,
+    color: raw.color ?? "",
+    print,
+    printEffect: print, // back-compat field
+    fabrications,
+    tags: Array.isArray(raw.tags) ? raw.tags : undefined,
+    subcategory: raw.subcategory,
+    description: raw.description,
+  };
+}
 
 /**
  * Fetches the catalog from /catalog.json (a static file served from the public
@@ -14,7 +67,6 @@ export function useCatalog() {
   useEffect(() => {
     let cancelled = false;
     const base = import.meta.env.BASE_URL || "/";
-    // cache-bust so admin edits show up on refresh without a hard reload
     fetch(`${base}catalog.json?ts=${Date.now()}`, { cache: "no-store" })
       .then((res) => {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -23,7 +75,10 @@ export function useCatalog() {
       .then((data) => {
         if (cancelled) return;
         const list = Array.isArray(data) ? data : data?.products;
-        setProducts(Array.isArray(list) ? list : []);
+        const normalized = Array.isArray(list)
+          ? (list.map(normalize).filter(Boolean) as Product[])
+          : [];
+        setProducts(normalized);
       })
       .catch((err) => {
         if (cancelled) return;

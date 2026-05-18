@@ -47,17 +47,23 @@ const Catalog = () => {
 
     if (searchQuery.trim()) {
       const q = searchQuery.toLowerCase().trim();
-      result = result.filter(
-        (p) =>
-          p.name.toLowerCase().includes(q) ||
-          p.fabric.toLowerCase().includes(q) ||
-          p.subcategory.toLowerCase().includes(q) ||
-          p.printEffect.toLowerCase().includes(q) ||
-          p.color.toLowerCase().includes(q) ||
-          (p.description && p.description.toLowerCase().includes(q)) ||
-          (p.tags && p.tags.some((tag) => tag.toLowerCase().includes(q))) ||
-          (p.fabrications && p.fabrications.some((f) => f.toLowerCase().includes(q)))
-      );
+      result = result.filter((p) => {
+        const haystack = [
+          p.name,
+          p.fabric,
+          p.color,
+          p.print,
+          p.printEffect,
+          p.subcategory,
+          p.description,
+          ...(p.tags ?? []),
+          ...(p.fabrications ?? []),
+        ]
+          .filter(Boolean)
+          .join(" ")
+          .toLowerCase();
+        return haystack.includes(q);
+      });
     }
 
     return result;

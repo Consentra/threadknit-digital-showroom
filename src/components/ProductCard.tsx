@@ -20,17 +20,16 @@ const ProductCard = ({ product, index }: ProductCardProps) => {
   const productType =
     (product.fabrications && product.fabrications[0]) || "Knit";
 
+  const printValue = product.print ?? product.printEffect ?? "";
+
   const specs: { label: string; value: string }[] = [];
   if (!isNone(product.fabric)) {
-    const fab = product.gsm
-      ? `${product.fabric} · ${product.gsm}`
-      : product.fabric;
-    specs.push({ label: t("productCard.fabrication"), value: fab });
+    specs.push({ label: t("productCard.fabrication"), value: product.fabric });
   }
   if (!isNone(product.color))
     specs.push({ label: t("productCard.color"), value: product.color });
-  if (!isNone(product.printEffect))
-    specs.push({ label: t("productCard.print"), value: product.printEffect });
+  if (!isNone(printValue))
+    specs.push({ label: t("productCard.print"), value: printValue });
 
   return (
     <motion.div
