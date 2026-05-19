@@ -18,7 +18,7 @@ const CategoryFilter = ({ active, onChange }: CategoryFilterProps) => {
             <button
               key={cat.id}
               onClick={() => onChange(cat.id)}
-              className={`relative px-5 py-2.5 font-sans text-xs font-medium uppercase tracking-wider whitespace-nowrap rounded-sm transition-colors ${
+              className={`relative px-4 py-2 font-sans text-[11px] font-medium uppercase tracking-wider whitespace-nowrap rounded-sm transition-colors ${
                 active === cat.id
                   ? "text-accent-foreground"
                   : "text-muted-foreground hover:text-foreground"
