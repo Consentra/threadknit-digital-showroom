@@ -97,7 +97,27 @@
   }
 }
 
-/* Smooth scrolling */
+/* Smooth scrolling + global overflow guard */
 html {
   scroll-behavior: smooth;
 }
+
+html,
+body,
+#root {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Prevent any descendant from forcing horizontal scroll */
+body {
+  position: relative;
+}
+
+img,
+video,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
