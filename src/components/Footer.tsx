@@ -46,9 +46,10 @@ const Footer = () => {
       <div className="absolute -top-32 -right-32 w-96 h-96 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="container mx-auto px-6 py-16 relative">
-        {/* Main columns: Brand (wide) + Nav + Resources + Contact */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-x-8 gap-y-12">
+      <div className="container mx-auto px-4 sm:px-6 py-14 md:py-16 relative">
+        {/* Main columns: Brand (wide) + Nav + Resources + Contact + Social */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-x-8 gap-y-10">
+
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-4">
             <Link to="/" className="flex items-center gap-3 mb-5 group" aria-label="ThreadKnit home">

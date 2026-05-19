@@ -43,17 +43,17 @@ const Navbar = () => {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isTransparent
-            ? "bg-navy/85 md:bg-gradient-to-b md:from-navy/55 md:via-navy/25 md:to-transparent backdrop-blur-md md:backdrop-blur-sm"
-            : "bg-background/95 backdrop-blur-md shadow-lg border-b border-border"
+            ? "bg-gradient-to-b from-navy/70 via-navy/40 to-transparent backdrop-blur-sm"
+            : "bg-background/95 backdrop-blur-md shadow-md border-b border-border"
         }`}
       >
-        <nav className="container mx-auto flex items-center justify-between px-6 py-4">
+        <nav className="container mx-auto flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2.5" aria-label="ThreadKnit home">
+          <Link to="/" className="flex items-center gap-2.5 shrink-0" aria-label="ThreadKnit home">
             <div
               className={`relative flex items-center justify-center h-9 w-9 rounded-md transition-colors ${
                 isTransparent
-                  ? "bg-cream ring-1 ring-accent/40"
+                  ? "bg-cream/95 ring-1 ring-accent/40 shadow-sm"
                   : "bg-primary ring-1 ring-accent/30"
               }`}
             >
@@ -68,12 +68,13 @@ const Navbar = () => {
             <motion.span
               initial={{ opacity: 0, x: -6 }}
               animate={{ opacity: 1, x: 0 }}
-              className="font-serif text-xl font-bold tracking-wide"
+              className="font-serif text-lg sm:text-xl font-bold tracking-wide"
             >
-              <span className={isTransparent ? "text-cream" : "text-foreground"}>Thread</span>
+              <span className={isTransparent ? "text-cream drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]" : "text-foreground"}>Thread</span>
               <span className="text-accent">Knit</span>
             </motion.span>
           </Link>
+
 
           {/* Desktop Links */}
           <div className="hidden md:flex items-center gap-8">

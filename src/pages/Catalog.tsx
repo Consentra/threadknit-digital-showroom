@@ -125,7 +125,7 @@ const Catalog = () => {
       <section id="products">
         <CategoryFilter active={activeCategory} onChange={setActiveCategory} />
 
-        <div className="container mx-auto px-6 py-16">
+        <div className="container mx-auto px-4 sm:px-6 py-10 md:py-14">
           {/* Catalog Download Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -158,8 +158,8 @@ const Catalog = () => {
           )}
 
           {loading && (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {Array.from({ length: 8 }).map((_, i) => (
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-5">
+              {Array.from({ length: 10 }).map((_, i) => (
                 <div
                   key={i}
                   className="rounded-sm overflow-hidden border border-border bg-card"
@@ -201,7 +201,7 @@ const Catalog = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.4 }}
-                  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+                  className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-5"
                 >
                   {visible.map((product, i) => (
                     <ProductCard key={product.id} product={product} index={i} />
