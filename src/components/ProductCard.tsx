@@ -150,14 +150,15 @@ const ProductCard = ({ product, index }: ProductCardProps) => {
       </button>
 
       {/* Minimal info */}
-      <div className="p-5 space-y-2">
-        <h3 className="font-serif text-base font-semibold text-foreground leading-snug group-hover:text-accent transition-colors duration-300">
+      <div className="p-3 sm:p-4 space-y-1.5">
+        <h3 className="font-serif text-sm sm:text-base font-semibold text-foreground leading-snug group-hover:text-accent transition-colors duration-300 line-clamp-2">
           {product.name}
         </h3>
-        <p className="font-sans text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+        <p className="font-sans text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
           {t(`categories.${product.category}`)}
         </p>
       </div>
+
     </motion.div>
   );
 };
