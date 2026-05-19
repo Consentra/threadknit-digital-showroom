@@ -51,11 +51,7 @@ const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2.5 shrink-0" aria-label="ThreadKnit home">
             <div
-              className={`relative flex items-center justify-center h-9 w-9 rounded-md transition-colors ${
-                isTransparent
-                  ? "bg-cream/95 ring-1 ring-accent/40 shadow-sm"
-                  : "bg-primary ring-1 ring-accent/30"
-              }`}
+              className="relative flex items-center justify-center h-9 w-9 rounded-md bg-cream ring-1 ring-accent/40 shadow-sm transition-colors"
             >
               <img
                 src={logoSymbol}
