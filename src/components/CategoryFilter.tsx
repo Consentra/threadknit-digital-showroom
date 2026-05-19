@@ -10,8 +10,9 @@ interface CategoryFilterProps {
 const CategoryFilter = ({ active, onChange }: CategoryFilterProps) => {
   const { t } = useTranslation();
   return (
-    <div className="sticky top-[72px] z-40 bg-background/95 backdrop-blur-md border-b border-border">
-      <div className="container mx-auto px-6 py-4">
+    <div className="sticky top-[60px] sm:top-[68px] z-40 bg-background/95 backdrop-blur-md border-b border-border">
+      <div className="container mx-auto px-4 sm:px-6 py-2 sm:py-2.5">
+
         <div className="flex items-center gap-2 overflow-x-auto scrollbar-none">
           {categories.map((cat) => (
             <button
