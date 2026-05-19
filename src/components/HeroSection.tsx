@@ -33,7 +33,7 @@ const HeroSection = () => {
       <div className="absolute top-1/3 right-8 md:right-16 w-px h-32 bg-gradient-to-b from-transparent via-accent/30 to-transparent" />
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 text-center">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 text-center">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
