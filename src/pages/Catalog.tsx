@@ -125,7 +125,7 @@ const Catalog = () => {
       <section id="products">
         <CategoryFilter active={activeCategory} onChange={setActiveCategory} />
 
-        <div className="container mx-auto px-6 py-16">
+        <div className="container mx-auto px-4 sm:px-6 py-10 md:py-14">
           {/* Catalog Download Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}
