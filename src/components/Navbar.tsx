@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import logoSymbol from "@/assets/logo-symbol.png";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
+import InquiryForm from "@/components/InquiryForm";
 import {
   Dialog,
   DialogContent,
@@ -197,21 +198,10 @@ const Navbar = () => {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.2, duration: 0.5 }}
-              className="px-6 pb-6"
+              transition={{ delay: 0.15, duration: 0.4 }}
+              className="px-6 pb-6 max-h-[60vh] overflow-y-auto"
             >
-              <iframe
-                src="https://docs.google.com/forms/d/e/1FAIpQLScwXU2ttTqhKdPR522YwFb0fYs04YD6vq2wu6bJi4VTclKrvg/viewform?embedded=true"
-                width="100%"
-                height="450"
-                frameBorder="0"
-                marginHeight={0}
-                marginWidth={0}
-                className="rounded-sm"
-                title="Query Form"
-              >
-                Loading…
-              </iframe>
+              <InquiryForm onClose={() => setFormOpen(false)} />
             </motion.div>
           </motion.div>
         </DialogContent>
