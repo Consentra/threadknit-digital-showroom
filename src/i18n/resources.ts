@@ -288,6 +288,39 @@ const en = {
       button: "Get In Touch",
     },
   },
+  inquiry: {
+    labels: {
+      name: "Full Name",
+      company: "Company Name",
+      email: "Email Address",
+      phone: "Phone Number",
+      subject: "Subject",
+      message: "Message",
+      attachment: "Attachment (optional)",
+      chooseFile: "Choose File",
+      fileHint: "JPG, PNG, PDF, DOC, DOCX — max 5MB",
+    },
+    placeholders: {
+      name: "Your full name",
+      company: "Your company",
+      email: "you@company.com",
+      phone: "+1 555 000 0000",
+      subject: "How can we help?",
+      message: "Tell us about your project, MOQ, fabrications, timelines…",
+    },
+    buttons: { send: "Send Inquiry", sending: "Sending…", cancel: "Cancel" },
+    success: {
+      title: "Inquiry sent successfully",
+      desc: "Thank you for reaching out. Our team will get back to you within 24 hours.",
+      another: "Send another",
+      close: "Close",
+    },
+    errors: {
+      generic: "Something went wrong. Please try again or email us directly.",
+      fileType: "Unsupported file type. Allowed: JPG, PNG, PDF, DOC, DOCX.",
+      fileSize: "File is too large. Maximum size is 5MB.",
+    },
+  },
 };
 
 // Other languages: loosened typing so per-language coverage can be partial.
@@ -385,7 +418,7 @@ const zh: Locale = {
   productCard: { specs: "技术规格", fabrication: "面料", color: "颜色", print: "印花", viewSpecs: "查看规格", hideSpecs: "隐藏规格", productName: "产品名称", wearCategory: "服装类别", allTypes: "全部类型" },
   footer: { motto: "\"柔软可穿。为舒适而制。为生活而塑。\"", tagline: "自始至终,为国际买家精心打造高端针织品。", navigation: "导航", productCatalog: "产品目录", aboutUs: "关于我们", sustainability: "可持续发展", contact: "联系", resources: "资源", brochure: "宣传册", deck: "演示文稿", infographics: "信息图", catalog: "目录", contactHeading: "联系", followUs: "关注我们", rights: "版权所有。高端针织品制造商。", backToTop: "返回顶部", madeWith: "于孟加拉国精心制造" },
   contact: { eyebrow: "联系我们", titleA: "共同打造您的", titleB: "系列", subtitle: "准备好让您的针织品愿景成为现实了吗?联系我们获取样品、报价或合作洽谈。我们期待您的来信。", role: "业务拓展与客户关系", info: { email: "电子邮件", emailDesc: "随时给我们发邮件", whatsapp: "WhatsApp", whatsappDesc: "直接与我们交流", location: "地址", locationValue: "孟加拉国 达卡 米尔布尔 12 区 – 1216", locationDesc: "我们的办公地址", response: "回复时间", responseValue: "24 小时内", responseDesc: "我们会及时回复每一条咨询" }, ctaLine: "想快速沟通?可立即通过 WhatsApp 联系或发送咨询。", chatWhatsapp: "WhatsApp 聊天", sendQuery: "发送咨询", bannerTitle: "浏览我们的完整产品系列", bannerDesc: "浏览完整针织品目录,了解我们能为您的品牌创造什么。", viewCatalog: "查看目录" },
-  about: about: {
+  about: {
     eyebrow: "关于 ThreadKnit", titleA: "于每一针", titleB: "中匠造卓越", subtitle: "致力于品质、舒适与工艺的高端针织品制造商——为追求最好的客户提供服务。",
     trust: { buyerFocused: { value: "100%", label: "以买家为本", desc: "我们的每一个决定都源于对您成功的承诺" }, response: { value: "24小时", label: "回复时间", desc: "我们崇尚高效沟通——您的咨询绝不会被忽视" }, quality: { value: "高端", label: "品质标准", desc: "严格的多点检验,只把最好的交付给您" }, direct: { value: "直接", label: "沟通方式", desc: "没有中间人——直接与我们的生产团队对接" } },
     story: { eyebrow: "我们是谁", title1: "品质", title2: "与匠艺并存", p1: "ThreadKnit 是一家高端针织品制造商,专注于按国际买家的严苛标准定制高品质服装。从最初的概念到最终的交付,每一件产品都坚定地专注于", p1Bold: "品质、版型与面料性能。", p2: "我们的专长涵盖针织品的全谱系——从轻盈的 140 GSM 单面布基础款,到 350 GSM 厚重摇粒绒外套。我们使用有机棉、含氨纶混纺、珠地、毛圈布及特种面料,打造兼具舒适与商业吸引力的服装。", p3: "我们服务着多个市场不断壮大的国际买家群体,以可靠、透明的沟通和卓越的产品质量,持续赢得回头订单。", p4: "我们的团队拥有深厚的行业知识与对针织品的真挚热情。我们深知您的品牌声誉取决于每一件服装的品质——并以应有的严谨对待这份责任。", promise: "我们的承诺" },
