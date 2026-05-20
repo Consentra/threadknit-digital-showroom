@@ -432,6 +432,20 @@ const zh: Locale = {
     tips: { eyebrow: "针织与 T 恤知识", title1: "保持持久品质的", title2: "实用建议", subtitle: "实用、基于事实的指导,助您与客户充分发挥每件针织服装的价值。", t1: { title: "冷水反洗", desc: "冷水(约 30°C)有助于保护面料纤维与印花。将 T 恤反过来洗可减少印花与表面纤维的摩擦,延长寿命。" }, t2: { title: "避免高温烘干", desc: "高温烘干是棉缩水与纤维损坏的主因。空气晾干或低温烘干可使版型、克重与柔软度长期稳定。" }, t3: { title: "GSM 影响手感与用途", desc: "GSM(克/平方米)代表面料重量。轻量(140–180 GSM)适合温暖气候 T 恤;中等(200–240 GSM)四季皆宜;厚重(280–350 GSM)适合卫衣与外套。" }, t4: { title: "精梳与环锭纺棉", desc: "精梳棉去除短纤维和杂质,纱线更顺滑、更坚韧。环锭纺纱通过加捻获得额外柔软度与耐久度——两者皆带来明显更佳的手感。" }, t5: { title: "防缩并非零缩水", desc: "即使是预缩棉,在热洗或高温烘干下也可能再缩 1–3%。遵循洗护标签可保持原有版型。" }, t6: { title: "针织衣物折叠存放", desc: "衣架长时间会拉松肩部并使针织衣形变。折叠存放 T 恤与毛衣可更长时间保持版型。" } },
     cta: { title: "准备开始您的下一个系列了吗?", desc: "让我们讨论您的需求。从面料选择到成衣制作,我们随时让您的愿景成为现实。", button: "联系我们" },
   },
+  inquiry: {
+    labels: { name: "姓名", company: "公司名称", email: "电子邮件", phone: "电话", subject: "主题", message: "留言", attachment: "附件(可选)", chooseFile: "选择文件", fileHint: "JPG、PNG、PDF、DOC、DOCX — 最大 5MB" },
+    placeholders: { name: "您的姓名", company: "您的公司", email: "you@company.com", phone: "+86 138 0000 0000", subject: "我们能如何帮助您?", message: "请告诉我们您的项目、起订量、面料和时间…" },
+    buttons: { send: "发送咨询", sending: "发送中…", cancel: "取消" },
+    success: { title: "咨询发送成功", desc: "感谢您的来信。我们的团队将在 24 小时内回复您。", another: "再发一条", close: "关闭" },
+    errors: { generic: "出错了,请稍后重试或直接发邮件给我们。", fileType: "不支持的文件类型。仅支持 JPG、PNG、PDF、DOC、DOCX。", fileSize: "文件过大。最大允许 5MB。" },
+  },
+  inquiry: {
+    labels: { name: "Nombre Completo", company: "Empresa", email: "Correo Electrónico", phone: "Teléfono", subject: "Asunto", message: "Mensaje", attachment: "Adjunto (opcional)", chooseFile: "Elegir archivo", fileHint: "JPG, PNG, PDF, DOC, DOCX — máx. 5MB" },
+    placeholders: { name: "Tu nombre completo", company: "Tu empresa", email: "tu@empresa.com", phone: "+34 600 000 000", subject: "¿Cómo podemos ayudarte?", message: "Cuéntanos sobre tu proyecto, MOQ, tejidos, plazos…" },
+    buttons: { send: "Enviar Consulta", sending: "Enviando…", cancel: "Cancelar" },
+    success: { title: "Consulta enviada con éxito", desc: "Gracias por contactarnos. Nuestro equipo te responderá en 24 horas.", another: "Enviar otra", close: "Cerrar" },
+    errors: { generic: "Algo salió mal. Inténtalo de nuevo o escríbenos directamente.", fileType: "Tipo de archivo no permitido. Solo JPG, PNG, PDF, DOC, DOCX.", fileSize: "El archivo es demasiado grande. Máximo 5MB." },
+  },
 };
 
 const es: Locale = {
@@ -603,6 +617,13 @@ const de: Locale = {
     tips: { eyebrow: "Strickwaren-Wissen", title1: "Tipps für", title2: "dauerhafte Qualität", subtitle: "Praktische, faktenbasierte Hinweise, um das Beste aus jedem Stück herauszuholen.", t1: { title: "Kalt & auf links waschen", desc: "Kaltes Wasser (~30°C) schont Fasern und Drucke. Auf links wenden reduziert Reibung und verlängert die Lebensdauer." }, t2: { title: "Keine hohe Trocknungshitze", desc: "Hohe Trocknerhitze ist Hauptursache für Baumwoll-Einlauf. Lufttrocknung oder niedrige Hitze halten Passform und Weichheit." }, t3: { title: "GSM beeinflusst Griff & Einsatz", desc: "GSM misst das Stoffgewicht. Leicht (140–180) für warme Tage; Mittel (200–240) ganzjährig premium; Schwer (280–350) ideal für Sweats und Outerwear." }, t4: { title: "Gekämmte & Ring-Spun-Baumwolle", desc: "Gekämmte Baumwolle entfernt kurze Fasern für glatteres, stärkeres Garn. Ring-Spun-Garne sind verdrillt für extra Weichheit und Haltbarkeit." }, t5: { title: "Pre-Shrunk heißt nicht Null-Einlauf", desc: "Auch vorgeschrumpfte Baumwolle kann bei Heißwäsche/Trocknung 1–3% einlaufen. Pflegehinweise beachten." }, t6: { title: "Strickwaren gefaltet lagern", desc: "Bügel können Schultern dehnen und Strickwaren verformen. Falten erhält die Form länger." } },
     cta: { title: "Bereit für Ihre nächste Kollektion?", desc: "Sprechen wir über Ihre Anforderungen. Von der Stoffwahl bis zur fertigen Bekleidung — wir verwirklichen Ihre Vision.", button: "Kontakt aufnehmen" },
   },
+  inquiry: {
+    labels: { name: "Vollständiger Name", company: "Unternehmen", email: "E-Mail-Adresse", phone: "Telefon", subject: "Betreff", message: "Nachricht", attachment: "Anhang (optional)", chooseFile: "Datei wählen", fileHint: "JPG, PNG, PDF, DOC, DOCX — max. 5MB" },
+    placeholders: { name: "Ihr vollständiger Name", company: "Ihr Unternehmen", email: "sie@firma.de", phone: "+49 30 0000000", subject: "Wie können wir helfen?", message: "Erzählen Sie uns von Ihrem Projekt, MOQ, Materialien, Terminen…" },
+    buttons: { send: "Anfrage senden", sending: "Senden…", cancel: "Abbrechen" },
+    success: { title: "Anfrage erfolgreich gesendet", desc: "Danke für Ihre Nachricht. Unser Team meldet sich innerhalb von 24 Stunden.", another: "Weitere senden", close: "Schließen" },
+    errors: { generic: "Etwas ist schiefgelaufen. Bitte erneut versuchen oder direkt schreiben.", fileType: "Nicht unterstützter Dateityp. Erlaubt: JPG, PNG, PDF, DOC, DOCX.", fileSize: "Datei zu groß. Maximal 5MB." },
+  },
 };
 
 const ar: Locale = {
@@ -694,6 +715,13 @@ const ar: Locale = {
     buyers: { eyebrow: "للمشترين", title1: "ما تحصل عليه", title2: "بالعمل معنا", subtitle: "سواء كنت تطلق علامة جديدة أو توسّع علامة قائمة، يقدم ThreadKnit الدعم التصنيعي والخبرة لتحويل رؤيتك إلى واقع.", b1: "كميات حد أدنى مرنة لدعم العلامات النامية والراسخة", b2: "خيارات وسم وتغليف وعلامات تجارية مخصصة", b3: "دعم تطوير المنتج من الفكرة إلى العينة", b4: "نطاق GSM واسع (140–350) لمجموعات موسمية متنوعة", b5: "إدارة حساب مخصصة لكل مشترٍ", b6: "التزام بالتسليم في الموعد مع تحديثات إنتاج منتظمة", f1: { label: "شحن\nدولي", desc: "نوصل حول العالم" }, f2: { label: "دعم\nمخصص", desc: "مدير حساب شخصي" }, f3: { label: "رضا\nالعميل", desc: "مدفوع بالطلبات المتكررة" }, f4: { label: "إنتاج\nداخلي", desc: "تحكم كامل في الجودة" } },
     tips: { eyebrow: "معرفة التريكو والتيشيرت", title1: "نصائح للحصول على", title2: "جودة دائمة", subtitle: "إرشادات عملية ومبنية على حقائق لتستفيد أنت وعملاؤك من كل قطعة تريكو.", t1: { title: "اغسل بماء بارد ومن الداخل", desc: "الماء البارد (~30°م) يحفظ ألياف القماش والطباعة. قلب التيشيرت يقلل الاحتكاك ويطيل العمر." }, t2: { title: "تجنب التجفيف بحرارة عالية", desc: "التجفيف الساخن سبب رئيسي لانكماش القطن. التجفيف بالهواء أو حرارة منخفضة يحافظ على المقاس والنعومة." }, t3: { title: "GSM يؤثر في الإحساس والاستخدام", desc: "GSM يقيس وزن القماش. خفيف (140–180) للأجواء الدافئة؛ متوسط (200–240) فاخر طوال العام؛ ثقيل (280–350) للسويت والملابس الخارجية." }, t4: { title: "قطن مُمشَّط وحلقي الغزل", desc: "القطن الممشط يزيل الألياف القصيرة لخيط أنعم وأقوى. خيوط الغزل الحلقي مُجدولة لراحة ومتانة إضافية." }, t5: { title: "مسبق الانكماش لا يعني صفر انكماش", desc: "حتى القطن مسبق الانكماش قد ينكمش 1–3% إضافية مع الغسيل/التجفيف الساخن. اتباع تعليمات العناية يحفظ المقاس." }, t6: { title: "خزّن التريكو مطويًا", desc: "الشماعات قد تشد الأكتاف وتشوّه التريكو. الطي يحافظ على شكله أطول." } },
     cta: { title: "مستعد لبدء مجموعتك التالية؟", desc: "لنناقش متطلباتك. من اختيار النسيج إلى الملابس النهائية، نحن هنا لتحقيق رؤيتك.", button: "تواصل معنا" },
+  },
+  inquiry: {
+    labels: { name: "الاسم الكامل", company: "اسم الشركة", email: "البريد الإلكتروني", phone: "رقم الهاتف", subject: "الموضوع", message: "الرسالة", attachment: "مرفق (اختياري)", chooseFile: "اختر ملفًا", fileHint: "JPG، PNG، PDF، DOC، DOCX — الحد الأقصى 5 ميجابايت" },
+    placeholders: { name: "اسمك الكامل", company: "شركتك", email: "you@company.com", phone: "+971 50 000 0000", subject: "كيف يمكننا مساعدتك؟", message: "أخبرنا عن مشروعك، الكميات، الأقمشة، الجداول…" },
+    buttons: { send: "إرسال الاستفسار", sending: "جارٍ الإرسال…", cancel: "إلغاء" },
+    success: { title: "تم إرسال الاستفسار بنجاح", desc: "شكرًا لتواصلك معنا. سيرد عليك فريقنا خلال 24 ساعة.", another: "إرسال آخر", close: "إغلاق" },
+    errors: { generic: "حدث خطأ. يرجى المحاولة لاحقًا أو مراسلتنا مباشرة.", fileType: "نوع ملف غير مدعوم. المسموح: JPG، PNG، PDF، DOC، DOCX.", fileSize: "الملف كبير جدًا. الحد الأقصى 5 ميجابايت." },
   },
 };
 
@@ -787,6 +815,13 @@ const ko: Locale = {
     tips: { eyebrow: "니트웨어 & 티 지식", title1: "오래가는 품질을 위한", title2: "팁", subtitle: "모든 니트 의류에서 최상의 결과를 얻기 위한 실용적이고 사실에 기반한 가이드.", t1: { title: "찬물로 뒤집어 세탁", desc: "찬물(약 30°C)은 원단 섬유와 프린트 그래픽을 보존합니다. 뒤집어 세탁하면 프린트와 표면 섬유의 마찰을 줄여 수명을 연장합니다." }, t2: { title: "고온 건조 피하기", desc: "고온 건조는 면 수축과 섬유 손상의 주요 원인입니다. 자연 건조나 저온 건조가 핏, 무게, 부드러움을 유지합니다." }, t3: { title: "GSM이 촉감과 용도에 영향", desc: "GSM은 원단 무게를 측정합니다. 경량(140-180 GSM)은 따뜻한 날씨 티에 적합; 중량(200-240 GSM)은 연중 프리미엄; 중량급(280-350 GSM)은 스웨트셔츠와 아우터에 이상적." }, t4: { title: "코마 및 링스펀 코튼", desc: "코마 코튼은 짧은 섬유와 불순물을 제거하여 더 매끄럽고 강한 원사를 만듭니다. 링스펀 원사는 추가 부드러움과 내구성을 위해 꼬아집니다." }, t5: { title: "프리슈렁크도 수축 제로는 아닙니다", desc: "프리슈렁크 면도 고온 세탁이나 건조 시 추가 1-3% 수축할 수 있습니다. 관리 라벨을 따르면 원래 핏을 유지합니다." }, t6: { title: "니트웨어는 접어서 보관", desc: "행거는 어깨를 늘리고 니트 의류의 모양을 변형시킬 수 있습니다. 티와 스웨터를 접어 보관하면 구조가 더 오래 유지됩니다." } },
     cta: { title: "다음 컬렉션을 시작할 준비가 되셨나요?", desc: "요구 사항을 논의합시다. 원단 선택부터 완성 의류까지, 비전을 실현하기 위해 여기 있습니다.", button: "연락하기" },
   },
+  inquiry: {
+    labels: { name: "성함", company: "회사명", email: "이메일", phone: "전화번호", subject: "제목", message: "메시지", attachment: "첨부 (선택)", chooseFile: "파일 선택", fileHint: "JPG, PNG, PDF, DOC, DOCX — 최대 5MB" },
+    placeholders: { name: "성함을 입력하세요", company: "회사명", email: "you@company.com", phone: "+82 10 0000 0000", subject: "무엇을 도와드릴까요?", message: "프로젝트, MOQ, 원단, 일정에 대해 알려주세요…" },
+    buttons: { send: "문의 보내기", sending: "전송 중…", cancel: "취소" },
+    success: { title: "문의가 성공적으로 전송되었습니다", desc: "연락해 주셔서 감사합니다. 24시간 이내에 답변 드리겠습니다.", another: "다시 보내기", close: "닫기" },
+    errors: { generic: "문제가 발생했습니다. 다시 시도하거나 이메일로 연락해 주세요.", fileType: "지원되지 않는 파일 형식입니다. JPG, PNG, PDF, DOC, DOCX만 허용됩니다.", fileSize: "파일이 너무 큽니다. 최대 5MB입니다." },
+  },
 };
 
 const ja: Locale = {
@@ -878,6 +913,13 @@ const ja: Locale = {
     buyers: { eyebrow: "バイヤーの方へ", title1: "私たちと", title2: "働くメリット", subtitle: "新しいブランドの立ち上げでも、既存ブランドの拡大でも、ThreadKnitはビジョンを実現する製造サポートと製品の専門知識を提供します。", b1: "成長ブランドと確立されたブランドの両方をサポートする柔軟なMOQ", b2: "カスタムラベリング、パッケージング、ブランディングオプション", b3: "コンセプトからサンプルまでの製品開発サポート", b4: "多様な季節コレクションのための幅広いGSM範囲（140-350）", b5: "すべてのバイヤーに専属アカウントマネジメント", b6: "定期的な生産アップデートと期日通りの納品コミットメント", f1: { label: "国際\n配送", desc: "世界中に配送" }, f2: { label: "専属\nサポート", desc: "個人アカウントマネージャー" }, f3: { label: "顧客\n満足", desc: "リピート注文主導" }, f4: { label: "自社\n生産", desc: "品質の完全管理" } },
     tips: { eyebrow: "ニットウェア＆Tシャツの知識", title1: "長持ちする品質の", title2: "ためのヒント", subtitle: "すべてのニット衣料品から最高の結果を得るための実践的で事実に基づくガイド。", t1: { title: "冷水で裏返して洗濯", desc: "冷水（約30°C）は生地の繊維とプリントグラフィックを保護します。裏返して洗うとプリントと表面繊維の摩擦が減り、衣料品の寿命が延びます。" }, t2: { title: "高温乾燥を避ける", desc: "高温タンブル乾燥はコットンの収縮と繊維の劣化の主な原因です。自然乾燥または低温乾燥がフィット感、重量、柔らかさを一貫して維持します。" }, t3: { title: "GSMは手触りと用途に影響", desc: "GSMは生地の重さを測定します。軽量（140-180 GSM）は暖かい天候のTシャツに最適、中重量（200-240 GSM）は年間通してプレミアム、重量級（280-350 GSM）はスウェットシャツとアウターに理想的。" }, t4: { title: "コーマド＆リングスパンコットン", desc: "コーマドコットンは短い繊維と不純物を除去し、より滑らかで強い糸を生産します。リングスパン糸は柔らかさと耐久性のためにねじられています。" }, t5: { title: "プレシュランクはゼロ収縮ではない", desc: "プレシュランクコットンでも高温洗濯や乾燥で追加1-3%収縮する可能性があります。ケアラベルに従うことで本来のフィット感を維持できます。" }, t6: { title: "ニットは畳んで保管", desc: "ハンガーは肩を伸ばし、ニット衣料品の形を変形させる可能性があります。Tシャツやセーターを畳むことで構造が長く維持されます。" } },
     cta: { title: "次のコレクションを始める準備はできましたか？", desc: "ご要件を相談しましょう。生地選びから完成した衣料品まで、ビジョンを実現するためにここにいます。", button: "お問い合わせ" },
+  },
+  inquiry: {
+    labels: { name: "お名前", company: "会社名", email: "メールアドレス", phone: "電話番号", subject: "件名", message: "メッセージ", attachment: "添付ファイル(任意)", chooseFile: "ファイルを選択", fileHint: "JPG、PNG、PDF、DOC、DOCX — 最大 5MB" },
+    placeholders: { name: "お名前", company: "会社名", email: "you@company.com", phone: "+81 90 0000 0000", subject: "どのようなご用件ですか?", message: "プロジェクト、MOQ、生地、スケジュールについてお聞かせください…" },
+    buttons: { send: "送信する", sending: "送信中…", cancel: "キャンセル" },
+    success: { title: "お問い合わせを送信しました", desc: "ご連絡ありがとうございます。24時間以内にご返信いたします。", another: "もう一度送信", close: "閉じる" },
+    errors: { generic: "エラーが発生しました。もう一度お試しいただくか、直接メールでご連絡ください。", fileType: "対応していないファイル形式です。JPG、PNG、PDF、DOC、DOCXのみ。", fileSize: "ファイルサイズが大きすぎます。最大 5MB です。" },
   },
 };
 
