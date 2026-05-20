@@ -439,13 +439,6 @@ const zh: Locale = {
     success: { title: "咨询发送成功", desc: "感谢您的来信。我们的团队将在 24 小时内回复您。", another: "再发一条", close: "关闭" },
     errors: { generic: "出错了,请稍后重试或直接发邮件给我们。", fileType: "不支持的文件类型。仅支持 JPG、PNG、PDF、DOC、DOCX。", fileSize: "文件过大。最大允许 5MB。" },
   },
-  inquiry: {
-    labels: { name: "Nombre Completo", company: "Empresa", email: "Correo Electrónico", phone: "Teléfono", subject: "Asunto", message: "Mensaje", attachment: "Adjunto (opcional)", chooseFile: "Elegir archivo", fileHint: "JPG, PNG, PDF, DOC, DOCX — máx. 5MB" },
-    placeholders: { name: "Tu nombre completo", company: "Tu empresa", email: "tu@empresa.com", phone: "+34 600 000 000", subject: "¿Cómo podemos ayudarte?", message: "Cuéntanos sobre tu proyecto, MOQ, tejidos, plazos…" },
-    buttons: { send: "Enviar Consulta", sending: "Enviando…", cancel: "Cancelar" },
-    success: { title: "Consulta enviada con éxito", desc: "Gracias por contactarnos. Nuestro equipo te responderá en 24 horas.", another: "Enviar otra", close: "Cerrar" },
-    errors: { generic: "Algo salió mal. Inténtalo de nuevo o escríbenos directamente.", fileType: "Tipo de archivo no permitido. Solo JPG, PNG, PDF, DOC, DOCX.", fileSize: "El archivo es demasiado grande. Máximo 5MB." },
-  },
 };
 
 const es: Locale = {
