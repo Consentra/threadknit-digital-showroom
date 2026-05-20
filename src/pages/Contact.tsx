@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import abirPhoto from "@/assets/abir-hossain.png";
 import logoSymbol from "@/assets/logo-symbol.png";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import InquiryForm from "@/components/InquiryForm";
 import SEO from "@/components/SEO";
 
 const fadeUp = {
@@ -197,17 +198,8 @@ const Contact = () => {
                 {t("nav.queryFormDesc")}
               </p>
             </DialogHeader>
-            <div className="px-6 pb-6">
-              <iframe
-                src="https://docs.google.com/forms/d/e/1FAIpQLScwXU2ttTqhKdPR522YwFb0fYs04YD6vq2wu6bJi4VTclKrvg/viewform?embedded=true"
-                width="100%"
-                height="450"
-                frameBorder="0"
-                className="rounded-sm"
-                title="Query Form"
-              >
-                Loading…
-              </iframe>
+            <div className="px-6 pb-6 max-h-[60vh] overflow-y-auto">
+              <InquiryForm onClose={() => setFormOpen(false)} />
             </div>
           </motion.div>
         </DialogContent>
