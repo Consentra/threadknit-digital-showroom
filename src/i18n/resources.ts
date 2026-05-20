@@ -518,6 +518,13 @@ const es: Locale = {
   footer: { motto: "\"Suavidad que puedes vestir. Hecho para la comodidad. Diseñado para la vida.\"", tagline: "Confeccionando tejidos premium para compradores internacionales desde el día uno.", navigation: "Navegación", productCatalog: "Catálogo de Productos", aboutUs: "Sobre Nosotros", sustainability: "Sostenibilidad", contact: "Contacto", resources: "Recursos", brochure: "Folleto", deck: "Presentación", infographics: "Infografías", catalog: "Catálogo", contactHeading: "Contacto", followUs: "Síguenos", rights: "Todos los derechos reservados. Fabricante Premium de Tejidos de Punto.", backToTop: "Volver arriba", madeWith: "Confeccionado con cuidado en Bangladés" },
   contact: en.contact,
   about: en.about,
+  inquiry: {
+    labels: { name: "Nombre Completo", company: "Empresa", email: "Correo Electrónico", phone: "Teléfono", subject: "Asunto", message: "Mensaje", attachment: "Adjunto (opcional)", chooseFile: "Elegir archivo", fileHint: "JPG, PNG, PDF, DOC, DOCX — máx. 5MB" },
+    placeholders: { name: "Tu nombre completo", company: "Tu empresa", email: "tu@empresa.com", phone: "+34 600 000 000", subject: "¿Cómo podemos ayudarte?", message: "Cuéntanos sobre tu proyecto, MOQ, tejidos, plazos…" },
+    buttons: { send: "Enviar Consulta", sending: "Enviando…", cancel: "Cancelar" },
+    success: { title: "Consulta enviada con éxito", desc: "Gracias por contactarnos. Nuestro equipo te responderá en 24 horas.", another: "Enviar otra", close: "Cerrar" },
+    errors: { generic: "Algo salió mal. Inténtalo de nuevo o escríbenos directamente.", fileType: "Tipo de archivo no permitido. Solo JPG, PNG, PDF, DOC, DOCX.", fileSize: "El archivo es demasiado grande. Máximo 5MB." },
+  },
 };
 
 const de: Locale = {
