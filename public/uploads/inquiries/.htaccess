@@ -1,0 +1,11 @@
+# Protect temporary inquiry uploads
+Options -Indexes
+
+# Block execution of any server-side scripts inside this folder
+<FilesMatch "\.(php|phtml|phps|pl|py|jsp|asp|sh|cgi)$">
+    Require all denied
+</FilesMatch>
+
+<IfModule mod_php.c>
+    php_flag engine off
+</IfModule>
